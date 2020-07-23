@@ -1,0 +1,119 @@
+ Question 1:  Write a JS code which takes input from the user and logs it in the console
+                          
+                            <!DOCTYPE html>
+                            <html>
+                            <head>
+                                <title>JavaScript to Log in Console </title>
+                                <meta charset="UTF-8">
+                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                    <script>
+                                        function conslog(){
+
+                                            var num = document.getElementById('num').value;
+
+                                            console.log(num);  
+                                            }
+                                    </script>
+                            </head>
+                            <body>
+                                <h2>JS to Log in Console </h2>
+                                <form method="post">
+                                    Enter input:  <input type="number" id="num" name="num" min="0" />
+                                    <input type="button" value="log" onclick="conslog()" name="find" />
+                                    <div style="margin-top: 10px;" id="result"></div>
+                                </form>
+                            </body>
+                        </html>
+                        
+                        
+Question 2:Explain with examples the remaining methods of String and Array
+
+                  * Substring()
+                   let str= ' JavaScript Substring ';
+                   let substring= str.substring(0,10);
+                   console.log(substring);
+                   OUTPUT: JavaScript
+
+                  * splice()
+                  <script>  
+                  var arr=["Monday","Tuesday","Saturday","Sunday","Thursday","Friday"];  
+                  var result=arr.splice(2,2,"Wednesday")  
+                  document.writeln("Updated array: "+arr+"<br>");  
+                  document.writeln("Removed element: "+result);  
+                  </script>
+                  OUTPUT: Updated array: Monday, Tuesday , Wednesday, Thursday, Friday
+                                    Removed array: Saturday, Sunday
+            
+                  * replace( )
+                    <html>
+                       <head>
+                          <title>replace( ) in js</title>
+                       </head>
+
+                       <body>   
+                          <script type = "text/javascript">
+                             var re = /apples/gi;
+                             var str = "Apples are round, and apples are juicy.";
+                             var newstr = str.replace(re, "oranges");        
+                             document.write(newstr ); 
+                          </script>      
+                       </body>
+                    </html>
+                    OUTPUT:
+                    oranges are round, and oranges are juicy.
+                    
+              *replaceall( )
+                     var myStr = 'if the facts do not fit the theory, change the facts.';
+              var newStr = replaceAll(myStr, 'facts', 'statistics')
+                     document.write(newStr);
+                      </script>
+              OUTPUT: if the facts do not fit the theory, change the statistics.
+              
+              
+              *arraylen( )
+                     var colors= [ " green", " pink", " green", " black" ];
+                     console.log(colors.length);
+
+
+
+Optional Assignment 3  
+
+Question 3:  Ask the user if he is 21+ and log the value "Can drink", "Cannot Drink".
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Age  </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function conslog(){
+               
+                var num = document.getElementById('num').value;
+                if(num<21){
+                document.getElementById('result').innerHTML = 'Cant Drink';
+                console.log(result);  
+                }
+                else{
+                    document.getElementById('result').innerHTML = 'Can Drink';  
+                    console.log(result);  
+                }
+
+                }
+          
+            
+        </script>
+    </head>
+    <body>
+        <h2> Age </h2>
+        <form method="post">
+            Enter input:  <input type="number" id="num" name="num" min="0" />
+            <input type="button" value="log" onclick="conslog()" name="find" />
+            <div style="margin-top: 10px;" id="result"></div>
+        </form>
+    </body>
+</html>
+
+
+
