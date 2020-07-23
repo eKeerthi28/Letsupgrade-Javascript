@@ -1,0 +1,45 @@
+Question 3:
+
+Write a program to take marks as input from the user and grade him accordingly. 
+Use Conditionalstatements. Also the same code using switch or ternary
+
+input: 50Output : Marks are 50 and grade is B
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript to Grade </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function grade()
+            {
+               
+                var num = document.getElementById('num').value;
+                
+                if ( num < 60){
+                    document.getElementById('result').innerHTML = 'Your Mark is '+ num + ' and Grade is B ';
+                    console.log("Your Mark is" + num + " and Grade is B");      
+                } 
+                else if (num < 80) {
+                    document.getElementById('result').innerHTML = 'Your Mark is '+ num + ' and Grade is A';
+                    console.log("Your Mark is" + num + " and Grade is  A"); 
+                } 
+                else if (num <= 100) 
+                {
+                    document.getElementById('result').innerHTML = 'Your Mark is '+ num + ' and Grade is A+';
+                    console.log("Your Mark is" + num + " and Grade is  A+"); 
+                }  
+            }    
+
+        </script>
+    </head>
+    <body>
+        <h2>JavaScript to find Grade</h2>
+        <form method="post">
+            Enter your mark :  <input type="number" id="num" name="num" min="0" /><input type="button" value="Find Grade" onclick="grade()" name="find" />
+            <div style="margin-top: 10px;" id="result"></div>
+        </form>
+    </body>
+</html>
