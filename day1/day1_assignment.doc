@@ -1,0 +1,47 @@
+Question 1 : 
+Explore and explain the various methods in console function Explain them Ex. console.log() console.warn(). etc... 
+
+Answer :
+•	log()
+•	error()
+•	warn()
+•	clear()
+•	time() and timeEnd()
+•	table()
+•	count()
+•	group() and groupEnd()
+•	custom console logs
+
+Eg. 
+console.log ('abc');  
+console.log(1); 
+console.warn('This is a warning.');
+console.clear();  
+console.time('abc');
+console.table({'a':1, 'b':2});
+console.count(i);
+console.group('simple'); 
+console.warn('warning!'); 
+console.error('error here'); 
+console.log('vivi vini vici'); 
+console.groupEnd('simple'); 
+console.log('new section');
+
+
+
+
+Question 2 : Write the difference between var, let and const with code examples. 
+ 	
+VAR: By using const we can assign a variable. 
+                It can be updated and re- declared within a scope.
+                 It is a function scope
+Const: It is a block scope.
+It is similar to that of let, the only difference is you cannot reassign it to a new       
+value.
+                It cannot be updated and re- declared.
+let: It can be defined within curly brackets{ }.
+               The variables declared with let can be reassigned.
+                It is also a block scope.
+
+
+Question 3 : Write a brief intro on available data types in Javascript.
