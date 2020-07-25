@@ -1,0 +1,180 @@
+Question 1:
+
+Write a program that will iterate over an array of colors and change the background of the pageafter 5 seconds.
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Age  </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            var c = ["blue", "black", "yellow", "red"];
+          
+            function changeColor() {
+              setTimeout(function loop() {
+                document.bgColor = c.shift();
+                if (c.length) {
+                  setTimeout(loop, 5000);
+                }
+              }, 5000);
+            }
+          
+            function start() {
+              setInterval(changeColor(), 5000);
+            }
+          </script>
+    </head>
+    
+  <body onload="start()">
+</body>
+</html>
+
+
+
+
+
+Question 2:Write a program that will display the multiplication table of a number on the webpage in a properformat. Take the input from the user.
+
+Input – 5
+
+Output - 5 x 1 = 5 5 x 2 = 10 and so on...
+
+Answer :
+
+<html>
+<head>
+<style>
+body {
+background: #F4F4F4;
+font-family: Arial;
+margin: 0;
+}
+</style>
+</head>
+<body>
+<table border="0" style="margin: 0 auto; width:500px">
+    <tr>
+        <td colspan="2"><h2>JS - Multiplication Table </h2></td>
+    </tr>
+ 
+    <tr>
+        <td width="28%">Enter a Number : </td>
+        <td><input type="number" onchange="printTable(this)"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><span id="mul"></span></td>
+    </tr>
+</table>
+ 
+<script>
+function printTable(num) {
+    var input = num.value;
+    if(!isNaN(input)) {
+        var table="";
+        var number="";
+        for(i=1;i<=20;i++) {
+            number = input * i;
+            table +=  input + " * " + i + " = " + number + "<br/>";
+        }
+        document.getElementById("mul").innerHTML = table;
+    }
+    else {
+        document.getElementById("mul").innerHTML = "Please Enter a valid Number";
+    }
+}
+</script>
+</body>
+</html>  
+
+
+
+
+
+
+
+Question 3:
+
+Make a webpage that will ask the name of the user. Then will display a welcome message on thewebpage.
+Also the webpage should also have a clock.Using the toggle method of classList add a dark mode feature to the website.
+
+
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title> Time </title>
+ <style>
+body {
+  background-color: rgb(31, 201, 201);
+}
+
+.dark-mode {
+  background-color: rgb(48, 46, 44);
+  font-family: 'calibri';
+  color: #0dcbe4;
+}
+
+
+#clock {
+  font-family: 'arial';
+  color: rgb(255, 251, 0);
+  font-size: 156px;
+  text-align: right;
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+
+ </style>
+<script>
+//var person=prompt("Please enter your name");                                
+//if( person== null || person == "") 
+//{   text ="user cancelled the prompt " ; } 
+//else  { text =" Hello" +person+ " How are you? Welcome to this page" }     
+
+var today = new Date();
+var hour = today.getHours();
+var minute = today.getMinutes();
+var second = today.getSeconds();
+var prepand = (hour >= 12)? " PM ":" AM ";
+hour = (hour >= 12)? hour - 12: hour;
+
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i; 
+}
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+function welcome() {
+  var num = document.getElementById('num').value;
+  document.getElementById('result').innerHTML = 'Hi, ' + num + ', !!... Welcome to our webpage';
+}
+
+console.log("Current Time : "+hour + prepand + " : " + minute + " : " + second);
+</script>
+</head>
+<body onload="startTime()">
+    <div id="clock"></div>
+    <h1>Enter Your Name :  <input type="string" id="num" name="num" min="0" /></h1>
+    <button onclick="welcome()"><h1> Enter </h1></button> 
+    <h1><div style="margin-top: 10px;" id="result"></div></h1>
+
+    <button onclick="myFunction()"><h1>Toggle dark mode</h1></button>
+</body>
+
+</html>
